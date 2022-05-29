@@ -1,0 +1,17 @@
+node{
+// demo
+   stage('SCM Checkout'){
+     git 'https://github.com/nandum21/maven-jenkins-ci-cd'
+   }
+   stage('Compile-Package'){
+      // Get maven home path
+      sh "mvn package"
+   }
+   
+   stage('SonarQube Analysis') {
+        withSonarQubeEnv('sonar-6') { 
+          sh "mvn sonar:sonar"
+        }
+    }
+   
+}
