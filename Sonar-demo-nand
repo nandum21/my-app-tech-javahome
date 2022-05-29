@@ -1,7 +1,8 @@
 node{
 // demo
    stage('SCM Checkout'){
-     git 'https://github.com/nandum21/maven-jenkins-ci-cd'
+     //git 'https://github.com/nandum21/maven-jenkins-ci-cd'
+     git 'https://github.com/nandum21/my-app-tech-javahome.git'
    }
    stage('Compile-Package'){
       // Get maven home path
